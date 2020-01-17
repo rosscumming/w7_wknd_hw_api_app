@@ -1,17 +1,32 @@
 <template>
   <div id="app">
+    <h1>Studio Ghibli Films</h1>
+    <selected-film :films="films"></selected-film>
   </div>
 </template>
 
 <script>
 
+import SelectFilm from './components/SelectFilm'
+
 export default {
+
+
   name: 'app',
     data(){
       return {
-        'films' = []
-      }
-    }
+        'films': [],
+        'selectFilm': null
+      };
+    },
+     mounted(){
+       fetch('https://ghibliapi.herokuapp.com/films/')
+        .then(response => response.json())
+        .then(films => this.films = films)
+     },
+     'components': {
+      'selected-film': SelectFilm
+     }
 }
 </script>
 
