@@ -1,10 +1,15 @@
 <template>
   <div v-if="film">
       <h2>{{film.title}}</h2><br>
-      <p> Description:</p>
+      <h3> Description:</h3>
       <p>{{film.description}}</p>
       <h3>Release Date:</h3>
       <p>{{film.release_date}}</p>
+      <h3>Director:</h3>
+      <p>{{film.director}}</p>
+      <h3>Producer:</h3>
+      <p>{{film.producer}}</p>
+
     </section>
   </div>
 
