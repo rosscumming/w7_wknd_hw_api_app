@@ -6,7 +6,7 @@
 </template>
 
 <script>
-
+import { eventBus } from './main.js'
 import SelectFilm from './components/SelectFilm'
 
 export default {
@@ -23,6 +23,8 @@ export default {
        fetch('https://ghibliapi.herokuapp.com/films/')
         .then(response => response.json())
         .then(films => this.films = films)
+
+        eventBus.$on('selected-film', filmObj => this.selectFilm = filmObj)
      },
      'components': {
       'selected-film': SelectFilm

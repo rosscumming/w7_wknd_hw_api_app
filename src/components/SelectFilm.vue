@@ -1,13 +1,28 @@
 <template>
-  <select>
+  <select v-model='selectedFilm' @change='handleSelected'>
     <option v-for='film in films'>{{film.title}}</option>
   </select>
 </template>
 
 <script>
+import { eventBus } from '../main.js'
+
+
 export default {
+
+
   name: 'selected-film',
-  props: ['films']
+  data(){
+    return{
+        selectedFilm: null
+    }
+  },
+  props: ['films'],
+  methods: {
+    handleSelected(){
+      eventBus.$emit('selected-film', this.selectedFilm);
+    }
+  }
 }
 </script>
 
