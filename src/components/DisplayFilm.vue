@@ -9,19 +9,27 @@
       <p>{{film.director}}</p>
       <h3>Producer:</h3>
       <p>{{film.producer}}</p>
+      <button @click="saveFavouriteFilm">Favourite This Film</button>
 
-    </section>
   </div>
+
+
 
 
 </template>
 
 <script>
+import { eventBus } from '../main.js'
 
 
 export default {
   name: 'display-film',
-  props: ['film']
+  props: ['film'],
+  methods: {
+    saveFavouriteFilm(){
+      eventBus.$emit('send-favourite-film', this.film);
+    }
+  }
 }
 </script>
 
