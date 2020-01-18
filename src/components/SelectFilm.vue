@@ -1,6 +1,6 @@
 <template>
   <select v-model='selectedFilm' @change='handleSelected'>
-    <option v-for='film in films'>{{film.title}}</option>
+    <option v-for='film in films' :value='film'>{{film.title}}</option>
   </select>
 </template>
 

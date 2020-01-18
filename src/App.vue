@@ -2,12 +2,14 @@
   <div id="app">
     <h1>Studio Ghibli Films</h1>
     <selected-film :films="films"></selected-film>
+    <display-film :film="selectFilm"></display-film>
   </div>
 </template>
 
 <script>
 import { eventBus } from './main.js'
-import SelectFilm from './components/SelectFilm'
+import SelectFilm from './components/SelectFilm.vue'
+import DisplayFilm from './components/DisplayFilm.vue'
 
 export default {
 
@@ -27,7 +29,8 @@ export default {
         eventBus.$on('selected-film', filmObj => this.selectFilm = filmObj)
      },
      'components': {
-      'selected-film': SelectFilm
+      'selected-film': SelectFilm,
+      'display-film': DisplayFilm
      }
 }
 </script>
