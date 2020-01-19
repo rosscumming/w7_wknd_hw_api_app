@@ -73,11 +73,12 @@ body {
 
 #container {
   position: relative;
-  margin: 80px 0 0 0;
+  margin: 30px 0 0 0;
   background: #f9f9fa;
   width: 600px;
   min-height: 700px;
   border-radius: 20px;
+ box-shadow: 5px 5px 20px rgba(17, 17, 31, 0.3);
 }
 
 #app {
