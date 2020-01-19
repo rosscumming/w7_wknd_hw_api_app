@@ -1,5 +1,6 @@
 <template>
-  <div v-if="film">
+  <div class="film-container" v-if="film">
+    <i class="fas fa-film"></i>
       <h2>{{film.title}}</h2><br>
       <h3> Description:</h3>
       <p>{{film.description}}</p>
@@ -35,18 +36,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+
+.fa-film{
+  margin:10px 0 5px 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+h2 {
+text-transform: uppercase;
+font-weight: 100;
+letter-spacing: 2px;
+font-size: 1em;
+margin-top: 0;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.film-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 </style>

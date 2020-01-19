@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <h1>Studio Ghibli Films</h1>
-    <selected-film :films="films"></selected-film>
-    <display-film :film="selectFilm"></display-film>
-    <favourite-films :favouriteFilms='favouriteFilms'></favourite-films>
+    <div id="container">
+      <h1>Studio Ghibli Films</h1>
+      <selected-film :films="films"></selected-film>
+      <display-film :film="selectFilm"></display-film>
+      <favourite-films :favouriteFilms='favouriteFilms'></favourite-films>
+    </div>
   </div>
 </template>
 
@@ -44,16 +46,51 @@ export default {
     'display-film': DisplayFilm,
     'favourite-films': FavouriteFilms
   }
+  //
+  //  computed: {
+  //  selectedFilmObj(){
+  //    return this.films.find(film => film.id === this.selectFilm)
+  //  }
+  // }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+html{
+  min-height: 100%;
+}
+
+body {
+
+  background: linear-gradient(to top, #F4B400 0%, #F4B400 50%, #0040f4 50%, #0040f4 100%);
+}
+
+#container{
+
+  margin: 0;
+  background: #f9f9fa;
+  width: 600px;
+  min-height: 700px;
+  border-radius: 20px;
+}
+
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  display:flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
+
+
+h1 {
+text-align: center;
+font-weight: 200;
+}
+
+
 </style>
