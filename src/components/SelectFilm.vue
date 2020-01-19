@@ -1,36 +1,34 @@
 <template>
-  <select v-model='selectedFilm' @change='handleSelected'>
-    <option v-for='film in films' :value='film'>{{film.title}}</option>
+  <select v-model="selectedFilm" @change="handleSelected">
+    <option v-for="film in films" :value="film">{{film.title}}</option>
   </select>
 </template>
 
 <script>
-import { eventBus } from '../main.js'
-
+import { eventBus } from "../main.js";
 
 export default {
-
-
-  name: 'selected-film',
-  data(){
-    return{
-        selectedFilm: null
-    }
+  name: "selected-film",
+  data() {
+    return {
+      selectedFilm: null
+    };
   },
-  props: ['films'],
+  props: ["films"],
   methods: {
-    handleSelected(){
-      eventBus.$emit('selected-film', this.selectedFilm);
+    handleSelected() {
+      eventBus.$emit("selected-film", this.selectedFilm);
     }
   }
-}
+};
 </script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 select {
-margin: 0 auto;
-display:flex;
+  margin: 0 auto;
+  display: flex;
+  text-align-last: center;
 }
 </style>
